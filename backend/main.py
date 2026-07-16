@@ -1,24 +1,20 @@
 from fastapi import FastAPI
+from routers.health import router as health_router
+from routers.info import router as info_router
+from routers.status import router as status_router
 
 app = FastAPI(
     title="CloudSage API",
-    description="AI-powered cloud infrastructure intelligence platform",
-    version="0.1.0",
+    version="0.1.0"
 )
 
+app.include_router(health_router)
+app.include_router(info_router)
+app.include_router(status_router)
 
 @app.get("/")
 def root():
     return {
-        "application": "CloudSage",
-        "status": "running",
-        "version": "0.1.0",
-        "message": "Welcome to CloudSage!"
-    }
-
-
-@app.get("/health")
-def health_check():
-    return {
-        "status": "healthy"
+        "status": "CloudSage Backend Running",
+        "version": "0.1.0"
     }
