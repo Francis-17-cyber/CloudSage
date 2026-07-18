@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from config import APP_NAME, APP_VERSION, APP_STATUS
 
 router = APIRouter(
     prefix="/info",
@@ -8,7 +9,7 @@ router = APIRouter(
 @router.get("/")
 def api_info():
     return {
-        "application": "CloudSage API",
-        "version": "0.1.0",
-        "status": "development"
+        "application": APP_NAME,
+        "version": APP_VERSION,
+        "status": APP_STATUS
     }

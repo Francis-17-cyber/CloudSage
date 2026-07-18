@@ -1,4 +1,4 @@
-# ☁️ CloudSage
+# CloudSage
 
 CloudSage is an AI-powered cloud infrastructure intelligence platform that helps cloud engineers understand, optimize, and secure cloud environments using Machine Learning, Large Language Models, and AWS.
 
